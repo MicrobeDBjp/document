@@ -1,11 +1,13 @@
 # document
 Documents of MicrobeDB.jp
 
-https://github.com/MicrobeDBjp/document/blob/master/test.md
-
 # About
 ## MicrobeDB.jp motivation
 新型シーケンサーの普及により、微生物のゲノム・メタゲノムデータは公共の塩基配列データベース（DB）中に爆発的な勢いで蓄積されています。それらを独自の手法で整理したDBとしては、ゲノムDBとしては例えばPATRICやMicroScope、Ensembl Bacteria等、メタゲノムDBとしてはMG-RAST、EBI-Metagenomics、IMG/M等、どちらも多数の優れたDBが既に存在します。しかしながら、多様な微生物について、ゲノムとメタゲノムデータを統合して整理したDBは、メタデータに着目して整理したJGI GOLD等以外は、ほとんど存在しません。MicrobeDB.jpプロジェクトは、Semantic Web技術を用いて、微生物のゲノムとメタゲノムデータ、及びオーソログや菌株等の両データと深く関連したデータを統合した微生物の統合DBを構築し、Webサイト上で実装された多様な解析・視覚化手法を用いてそれらのデータから、様々なバックグラウントを持つ研究者が知識発見を容易に行えるようにすることを目的としています。
+
+https://github.com/MicrobeDBjp/document/blob/master/test.md
+
+
 ## Brief description
 MicrobeDB.jpプロジェクトでは、主に原核生物の、International Nucleotide Sequence Database Collabolation (INSDC)で公開されているゲノムデータと16S rRNA gene amplicon sequencing (メタ16S)、メタゲノムデータを再解析した上で、Semantic Web技術を用いて統合しております。それらデータに、菌株保存機関由来の菌株データやゲノム・メタ16S・メタゲノムのサンプルの分離源等のメタデータ等の多様なデータを統合するとともに、様々な解析アプリケーションをWebページ上で実装し、微生物の統合DB「MicrobeDB.jp」としてCC BY 4.0のライセンスで公開しております。メタデータについては、様々なオントロジー・統制語彙を用いて異なる由来のデータ間で可能な範囲で用いる語彙を統一して記述をしています。加えて、ユーザが持つ原核生物のゲノム配列データおよびメタ16S・メタゲノム配列データを入力として、homolog組成や系統組成、遺伝子機能組成を計算し、公開済みの組成データと比較解析可能な機能も利用できます。
 ## Semantic Web technology
