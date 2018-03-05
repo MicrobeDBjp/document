@@ -29,7 +29,7 @@ MicrobeDB.jpプロジェクトは、国立研究開発法人科学技術振興�
 ## Alumni
 +   竹原潤一、吉野弘二、鈴木真也、山本希、小西史一、菅原秀明
 
-## DataDetail
+## Data Detail
 MicrobeDB.jpのDataの詳細は、[リンク先](https://github.com/MicrobeDBjp/document/blob/master/DataDetail)に記述してあります。
 
 ## Contact
