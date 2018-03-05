@@ -31,7 +31,7 @@ MicrobeDB.jpで用いているRDFデータは非公開データ以外は全て[N
 +   竹原潤一、吉野弘二、鈴木真也、山本希、小西史一、菅原秀明
 
 ## Data Detail
-MicrobeDB.jpのDataの詳細は、[リンク先](https://github.com/MicrobeDBjp/document/blob/master/DataDetail\.md)に記述してあります。
+MicrobeDB.jpのDataの詳細は、[リンク先](https://github.com/MicrobeDBjp/document/blob/master/DataDetail.md)に記述してあります。
 
 ## Contact
 	何か質問等ある場合には、hmori_at_nig.ac.jpまでご連絡ください。(_at_は@へ変換をお願いします）
