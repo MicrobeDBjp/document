@@ -24,7 +24,7 @@
 ### Data models
 MicrobeDB.jpのRDFデータのデータモデルについては、現在準備中のMicrobeDB.jp論文の中で詳しく述べております。
 その論文以外ですと、FALDOを用いた微生物ゲノムのRDFについては、[Bolleman JT, et al. 2016]、MBGD-OやOrthO等のオントロジーを用いたオーソログRDFについては、[Chiba H, et al. 2015、Fernández-Breis JT, et al. 2016]に詳細が記述されております。
-メタゲノムのメタデータのデータモデルについては、sra_metadata_schema、メタゲノムの系統組成のデータモデルについては、sra_analysis_tax_abundance_schema、メタゲノムの遺伝子機能組成のデータモデルについては、sra_analysis_env_function_schema、
+メタゲノムのメタデータのデータモデルについては、[sra_metadata_schema](https://github.com/MicrobeDBjp/document/blob/master/Figures/sra_metadata_schema.png)、メタゲノムの系統組成のデータモデルについては、[sra_analysis_tax_abundance_schema](https://github.com/MicrobeDBjp/document/blob/master/Figures/sra_analysis_tax_abundance_schema.png)、メタゲノムの遺伝子機能組成のデータモデルについては、[sra_analysis_env_function_schema](https://github.com/MicrobeDBjp/document/blob/master/Figures/sra_analysis_env_function_schema.png)、
 PDOやCSSOを用いた病原菌のデータモデルについては、[disease_schema](https://github.com/MicrobeDBjp/document/blob/master/Figures/disease_schema.png)に詳細が描画されております。
 
 ### Backend infrastructure
