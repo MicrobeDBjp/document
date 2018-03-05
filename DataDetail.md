@@ -12,7 +12,12 @@
 
 ### 使用している代表的なオントロジー
 +   `ゲノムデータ`:FALDO、SO、INSDCO
+
 +   `オーソログデータ`:OrthO、MBGDO
+
 +   `Culture collection data`:MCCV、NCBI Taxonomy、MEO
+
 +   `病気関連微生物データ`:PDO、CSSO
+
 +   `メタ16S・メタゲノムデータ`:MEO、MSV、NCBI Taxonomy
+
