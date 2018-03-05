@@ -15,7 +15,7 @@ Semantic Web技術とは、個々のデータおよびそれらの間のリン�
 ## Funding
 MicrobeDB.jpプロジェクトは、国立研究開発法人科学技術振興機構 (JST) バイオサイエンスデータベースセンター (NBDC) による、ライフサイエンスデータベース統合推進事業「統合化推進プログラム」により、 2011年4月-2014年3月、2014年4月-2017年3月、2017年4月-2022年3月の3期にわたり研究開発費をサポートしていただいております。
 ## License
-Creative Commons Attribution 4.0 International (CC BY 4.0) license ( https://creativecommons.org/licenses/by/4.0/legalcode.ja )
+[Creative Commons Attribution 4.0 International (CC BY 4.0) license](https://creativecommons.org/licenses/by/4.0/legalcode.ja)
 
 ## Team
 +   `国立遺伝学研究所` :黒川顕、中村保一、神沼英里、森宙史、藤澤貴智、東光一
