@@ -11,6 +11,10 @@ MicrobeDB.jpプロジェクトでは、主に原核生物の、International Nuc
 Semantic Web技術とは、個々のデータおよびそれらの間のリンクが持つ意味（セマンティクス）を記述し、データの統合・共有・再利用を容易にすることを目的として開発された技術仕様のことを指します。異なるDB由来のデータを統合する際には、それぞれのDBでデータ記述の際に用いる語彙や考え方が異なる点を考慮しつつデータを統合する必要があります。Semantic Web技術を用いて個々のデータの意味を記述し、かつデータ統合の際にデータ間のリンクの意味を記述することで、比較的容易にデータの統合が可能になります。具体的な技術としては、データの記述形式であるResource Description Framework (RDF)やオントロジー記述言語Web Ontology Language (OWL)、RDFに対する検索言語SPARQL Protocol and RDF Query Language (SPARQL)等があります。Semantic Web技術の詳細は、W3Cの[Webページ](https://www.w3.org/2001/sw/)および慶應義塾大学の神崎先生の[Webページ](https://www.kanzaki.com/docs/sw/)等が参考になります。
 ## Funding
 MicrobeDB.jpプロジェクトは、国立研究開発法人科学技術振興機構 (JST) バイオサイエンスデータベースセンター (NBDC) による、ライフサイエンスデータベース統合推進事業「統合化推進プログラム」により、 2011年4月-2014年3月、2014年4月-2017年3月、2017年4月-2022年3月の3期にわたり研究開発費をサポートしていただいております。
+
+## Data download
+MicrobeDB.jpで用いているRDFデータは非公開データ以外は全て[NBDC DBアーカイブ](https://dbarchive.biosciencedbc.jp/en/microbedb/desc.html)からダウンロードできます。
+
 ## License
 [Creative Commons Attribution 4.0 International (CC BY 4.0) license](https://creativecommons.org/licenses/by/4.0/legalcode.ja)
 
