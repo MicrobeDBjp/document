@@ -1,7 +1,6 @@
-### キーワード検索 ###
+### ファセット検索 ###
 
-#### 系統名の検索 ####
-例: Rickettsia が見つかる環境を知りたい  
+例: ヒト腸内メタ16S・メタゲノムサンプルを比較解析したい  
 1. https://beta.microbedb.jp/
 の一番上の検索窓に Rickettsia と入力してSearch
 ![RickettsiaHome](https://github.com/MicrobeDBjp/document/blob/master/Figures/RickettsiaHome.jpg)
