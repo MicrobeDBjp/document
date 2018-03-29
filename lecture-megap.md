@@ -22,4 +22,5 @@ MeGAPの実行は、DDBJ Read Annotation Pipelineの機能拡張として実装�
 ![megap_6](https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_6.png)
 
 #### 6. MeGAPの結果を取得する ####
+Download All の megap_result_all.tar.gz が結果です。このファイルをそのままMicrobeDB.jpにアップロード可能です。
 ![megap_result](https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_result.png)
