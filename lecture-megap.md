@@ -4,6 +4,8 @@ DDBJ Read Annotation Pipelineは、次世代シーケンサ配列のクラウド
 MeGAPの実行は、DDBJ Read Annotation Pipelineの機能拡張として実装されており、ログイン後メタゲノム配列データ(.fastq)のアップロードおよびMeGAP実行が可能になります。
 注意: バグフィックス中の場合、不具合が発生する場合があります。ショットガンの解析は現在使えません。
 
+![mdb_pipelines.png](https://github.com/MicrobeDBjp/document/blob/master/Figures/mdb_pipelines.png)
+
 ### DDBJ pipelineのユーザ登録 ###
 #### 1. トップページ ( https://p.ddbj.nig.ac.jp/pipeline/Login.do ) にアクセスし、"New account"をクリックする ####
 ![ddbj_pipeline_new_account](https://github.com/MicrobeDBjp/document/blob/master/Figures/ddbj_pipeline_new_account.png)
