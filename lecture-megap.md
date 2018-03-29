@@ -2,7 +2,7 @@
 DDBJ Read Annotation Pipelineは、次世代シーケンサ配列のクラウド型データ解析プラットフォームで、国立遺伝学研究所スーパコンピュータ上で運用されています。詳細なヘプルページはこちら https://sites.google.com/a/g.nig.ac.jp/pipeline_help/home
 
 MeGAPの実行は、DDBJ Read Annotation Pipelineの機能拡張として実装されており、ログイン後メタゲノム配列データ(.fastq)のアップロードおよびMeGAP実行が可能になります。
-注意: バグフィックス中の場合、不具合が発生する場合があります。ショットガンの解析は現在使えません。
+注意: バグフィックス中の場合、不具合が発生する場合があります。また、ショットガン解析は現在使えません。
 
 ![mdb_pipelines.png](https://github.com/MicrobeDBjp/document/blob/master/Figures/mdb_pipelines.png)
 
