@@ -12,6 +12,13 @@ MeGAPの実行は、DDBJ Read Annotation Pipelineの機能拡張として実装�
 #### 4. Extensionページから登録されたアカウントおよびメールにより送信されたパスワードを入力し、"ExtensionLogin"を実行する ####
 ![ddbj_pipeline_extension_top.png](https://github.com/MicrobeDBjp/document/blob/master/Figures/ddbj_pipeline_extension_top.png)
 
-#### 5. メタゲノム解析をアップロードする ####
-#### 6. 解析に用いるデータを選択し、MeGAPを実行する ####
-#### 7. MeGAPの結果を取得する ####
+#### 5. メタゲノム解析配列データFASTQをアップロードし、MeGAPを実行する ####
+![megap_1](https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_1.png)
+![megap_2](https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_2.png)
+![megap_3](https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_3.png)
+![megap_4](https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_4.png)
+![megap_5](https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_5.png)
+![megap_6](https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_6.png)
+
+#### 6. MeGAPの結果を取得する ####
+![megap_result](https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_result.png)
