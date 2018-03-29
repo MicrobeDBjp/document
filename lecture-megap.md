@@ -6,6 +6,8 @@ MeGAPの実行は、DDBJ Read Annotation Pipelineの機能拡張として実装�
 
 ![mdb_pipelines.png](https://github.com/MicrobeDBjp/document/blob/master/Figures/mdb_pipelines.png)
 
+残念ながら、MicrobeDB.jpとDDBJ pipelineアカウントは運用上ことなるユーザ認証システムを利用しており、ご自身のデータを解析する場合２つのアカウントを作成する必要があります。
+
 ### DDBJ pipelineのユーザ登録 ###
 #### 1. トップページ ( https://p.ddbj.nig.ac.jp/pipeline/Login.do ) にアクセスし、"New account"をクリックする ####
 ![ddbj_pipeline_new_account](https://github.com/MicrobeDBjp/document/blob/master/Figures/ddbj_pipeline_new_account.png)
