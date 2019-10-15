@@ -1,8 +1,8 @@
 theme: jekyll-theme-minimal
-title: MicrobeDB.jp Documentation
+title: MicrobeDB.jp
 description: How to use MicrobeDB.jp
 #logo: https://microbedbjp.github.io/document/mdb_logo.png
+logo: /mdb_logo.png
 
-#baseurl: ""
-#url: "https://microbedbjp.github.io/document/"
+url: "https://beta.microbedb.jp"
 markdown: kramdown
