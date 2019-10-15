@@ -4,6 +4,6 @@ description: How to use MicrobeDB.jp
 #logo: https://microbedbjp.github.io/document/mdb_logo.png
 logo: /mdb_logo.png
 
-baseurl: "https://microbedbjp.github.io/document"
+#baseurl: "https://microbedbjp.github.io/document"
 
 markdown: kramdown
