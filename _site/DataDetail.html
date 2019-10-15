@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Data detail | MicrobeDB.jp Documentation</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Data detail" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to use MicrobeDB.jp" />
+<meta property="og:description" content="How to use MicrobeDB.jp" />
+<link rel="canonical" href="http://localhost:4000/DataDetail.html" />
+<meta property="og:url" content="http://localhost:4000/DataDetail.html" />
+<meta property="og:site_name" content="MicrobeDB.jp Documentation" />
+<script type="application/ld+json">
+{"description":"How to use MicrobeDB.jp","@type":"WebPage","url":"http://localhost:4000/DataDetail.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://docs.json2ld.mapper.tokyo/JSON2LD_Mapper_Logo_Short.png"}},"headline":"Data detail","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=ab9358c5c2d1c658db8c765f42d12d96031f97c3">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">MicrobeDB.jp Documentation</a></h1>
+        
+        
+          <img src="https://docs.json2ld.mapper.tokyo/JSON2LD_Mapper_Logo_Short.png" alt="Logo" />
+        
+
+        <p>How to use MicrobeDB.jp</p>
+
+        
+        <p class="view"><a href="https://github.com/MicrobeDBjp/document">View the Project on GitHub <small>MicrobeDBjp/document</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h1 id="data-detail">Data detail</h1>
+<h3 id="microbedbjpで用いているデータ">MicrobeDB.jpで用いているデータ</h3>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">ゲノムデータ</code>:MBGD release 2015-01に含まれるNCBI RefSeq DB [O’Leary NA, et al. 2016]のゲノムデータ、およびRefSeqに含まれておらずかつhigh qualityなdraft genomeデータはINSDC Genome DB [Cochrane G, et al. 2016]</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">オーソログデータ</code>:MBGD release 2015-01 [Uchiyama I, et al. 2015].</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Culture collection data</code>: 2012年版のNBRCの菌株データと、2016年版のJCMの菌株データ</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">病気関連微生物データ</code>: NCBI BioProject DBとJGI GOLDのゲノム解読済み株のメタデータ、および元のゲノム論文から、病原菌関連のデータを抽出</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">メタ16S・メタゲノムデータ</code>: 2014年8月にダウンロードした、INSDC DRA/ERA/SRA由来のメタ16S・メタゲノムデータについて、系統組成と遺伝子機能組成をサンプルごとにMeGAP2で再解析した結果</p>
+  </li>
+</ul>
+
+<h3 id="使用している代表的なオントロジー">使用している代表的なオントロジー</h3>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">ゲノムデータ</code>:FALDO、SO、INSDCO</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">オーソログデータ</code>:OrthO、MBGDO</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Culture collection data</code>:MCCV、NCBI Taxonomy、MEO</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">病気関連微生物データ</code>:PDO、CSSO</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">メタ16S・メタゲノムデータ</code>:MEO、MSV、NCBI Taxonomy</p>
+  </li>
+</ul>
+
+<h3 id="data-models">Data models</h3>
+<p>MicrobeDB.jpのRDFデータのデータモデルについては、現在準備中のMicrobeDB.jp論文の中で詳しく述べております。
+その論文以外ですと、FALDOを用いた微生物ゲノムのRDFについては、[Bolleman JT, et al. 2016]、MBGD-OやOrthO等のオントロジーを用いたオーソログRDFについては、[Chiba H, et al. 2015、Fernández-Breis JT, et al. 2016]に詳細が記述されております。
+メタゲノムのメタデータのデータモデルについては、<a href="https://github.com/MicrobeDBjp/document/blob/master/Figures/sra_metadata_schema.png">sra_metadata_schema</a>、メタゲノムの系統組成のデータモデルについては、<a href="https://github.com/MicrobeDBjp/document/blob/master/Figures/sra_analysis_tax_abundance_schema.png">sra_analysis_tax_abundance_schema</a>、メタゲノムの遺伝子機能組成のデータモデルについては、<a href="https://github.com/MicrobeDBjp/document/blob/master/Figures/sra_analysis_env_function_schema.png">sra_analysis_env_function_schema</a>、
+PDOやCSSOを用いた病原菌のデータモデルについては、<a href="https://github.com/MicrobeDBjp/document/blob/master/Figures/disease_schema.png">disease_schema</a>に詳細が描画されております。</p>
+
+<h3 id="backend-infrastructure">Backend infrastructure</h3>
+<p>OpenLink Virtuoso version 7.1をRDFストアとSPARQL検索に用いております。
+TogoStanzaフレームワークを、個別アプリケーションにおけるHTML/CSS/JavaScriptの視覚化等に用いております。
+Apache Solrを文字列データの検索の際に用いております。
+Elasticsearchを比較解析のファセット検索に用いております。</p>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/MicrobeDBjp">MicrobeDBjp</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>

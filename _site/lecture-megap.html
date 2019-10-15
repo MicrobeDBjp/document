@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>DDBJ pipeline上でのMeGAP実行結果の取得まで ## | MicrobeDB.jp Documentation</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="DDBJ pipeline上でのMeGAP実行結果の取得まで ##" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to use MicrobeDB.jp" />
+<meta property="og:description" content="How to use MicrobeDB.jp" />
+<link rel="canonical" href="http://localhost:4000/lecture-megap.html" />
+<meta property="og:url" content="http://localhost:4000/lecture-megap.html" />
+<meta property="og:site_name" content="MicrobeDB.jp Documentation" />
+<script type="application/ld+json">
+{"description":"How to use MicrobeDB.jp","@type":"WebPage","url":"http://localhost:4000/lecture-megap.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://docs.json2ld.mapper.tokyo/JSON2LD_Mapper_Logo_Short.png"}},"headline":"DDBJ pipeline上でのMeGAP実行結果の取得まで ##","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=ab9358c5c2d1c658db8c765f42d12d96031f97c3">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">MicrobeDB.jp Documentation</a></h1>
+        
+        
+          <img src="https://docs.json2ld.mapper.tokyo/JSON2LD_Mapper_Logo_Short.png" alt="Logo" />
+        
+
+        <p>How to use MicrobeDB.jp</p>
+
+        
+        <p class="view"><a href="https://github.com/MicrobeDBjp/document">View the Project on GitHub <small>MicrobeDBjp/document</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h2 id="ddbj-pipeline上でのmegap実行結果の取得まで">DDBJ pipeline上でのMeGAP実行結果の取得まで</h2>
+<p>DDBJ Read Annotation Pipelineは、次世代シーケンサ配列のクラウド型データ解析プラットフォームで、国立遺伝学研究所スーパコンピュータ上で運用されています。詳細なヘプルページはこちら https://sites.google.com/a/g.nig.ac.jp/pipeline_help/home</p>
+
+<p>MeGAPの実行は、DDBJ Read Annotation Pipelineの機能拡張として実装されており、ログイン後メタゲノム配列データ(.fastq)のアップロードおよびMeGAP実行が可能になります。
+注意: バグフィックス中の場合、不具合が発生する場合があります。また、ショットガン解析は現在使えません。</p>
+
+<p><img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/mdb_pipelines.png" alt="mdb_pipelines.png" /></p>
+
+<p>残念ながら、MicrobeDB.jpとDDBJ pipelineアカウントは運用上ことなるユーザ認証システムを利用しており、ご自身のデータを解析する場合２つのアカウントを作成する必要があります。</p>
+
+<h3 id="ddbj-pipelineのユーザ登録">DDBJ pipelineのユーザ登録</h3>
+<h4 id="1-トップページ--httpspddbjnigacjppipelinelogindo--にアクセスしnew-accountをクリックする">1. トップページ ( https://p.ddbj.nig.ac.jp/pipeline/Login.do ) にアクセスし、”New account”をクリックする</h4>
+<p><img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/ddbj_pipeline_new_account.png" alt="ddbj_pipeline_new_account" /></p>
+<h4 id="2-すべてのユーザ情報を入力しregistrationをクリックする">2. すべてのユーザ情報を入力し、”Registration”をクリックする</h4>
+<p><img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/ddbj_pipeline_registration.png" alt="ddbj_pipeline_registration.png" />
+登録メールアドレスに送られてくるメールによる確認操作により登録完了となります。</p>
+<h4 id="3-extensionトップページにアクセスする-httppddbjnigacjppipelineextlogindo">3. Extensionトップページにアクセスする http://p.ddbj.nig.ac.jp/pipeline/ext/Login.do</h4>
+<h4 id="4-extensionページから登録されたアカウントおよびメールにより送信されたパスワードを入力しextensionloginを実行する">4. Extensionページから登録されたアカウントおよびメールにより送信されたパスワードを入力し、”ExtensionLogin”を実行する</h4>
+<p><img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/ddbj_pipeline_extension_top.png" alt="ddbj_pipeline_extension_top.png" /></p>
+
+<h4 id="5-メタゲノム解析配列データfastqをアップロードしmegapを実行する">5. メタゲノム解析配列データFASTQをアップロードし、MeGAPを実行する</h4>
+<p>データをアップロードするため、左メニューANALYSIS &gt;  Upload Query をクリックし、画面中央の”Add new files”を選択する
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_1.png" alt="megap_1" />
+SSH、FTP、HTTP経由でデータをアップロード後、”Upload Query”で解析したいデータを選択し、Add to listをクリックする
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_2.png" alt="megap_2" />
+クエリファイルを選択して”Next”
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_3.png" alt="megap_3" />
+Run Optionを選択する　（注意: 現在、Shotgun Metagenome Sequencingは不具合解消中のため使えません）
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_4.png" alt="megap_4" />
+確認画面からRunを実行する
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_5.png" alt="megap_5" /></p>
+
+<p><img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_6.png" alt="megap_6" /></p>
+
+<h4 id="6-megapの結果を取得する">6. MeGAPの結果を取得する</h4>
+<p>JOB STATUS &gt; MeGAPで終了を待つ”Detail View”で結果を表示する
+Download All の megap_result_all.tar.gz が結果です。このファイルをそのままMicrobeDB.jpにアップロード可能です。
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_result.png" alt="megap_result" />
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/megap_result_upload.png" alt="megap_result_upload" /></p>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/MicrobeDBjp">MicrobeDBjp</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>

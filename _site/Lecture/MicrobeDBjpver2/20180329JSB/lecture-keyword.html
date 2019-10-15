@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>キーワード検索 ### | MicrobeDB.jp Documentation</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="キーワード検索 ###" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to use MicrobeDB.jp" />
+<meta property="og:description" content="How to use MicrobeDB.jp" />
+<link rel="canonical" href="http://localhost:4000/Lecture/MicrobeDBjpver2/20180329JSB/lecture-keyword.html" />
+<meta property="og:url" content="http://localhost:4000/Lecture/MicrobeDBjpver2/20180329JSB/lecture-keyword.html" />
+<meta property="og:site_name" content="MicrobeDB.jp Documentation" />
+<script type="application/ld+json">
+{"description":"How to use MicrobeDB.jp","@type":"WebPage","url":"http://localhost:4000/Lecture/MicrobeDBjpver2/20180329JSB/lecture-keyword.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://docs.json2ld.mapper.tokyo/JSON2LD_Mapper_Logo_Short.png"}},"headline":"キーワード検索 ###","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=ab9358c5c2d1c658db8c765f42d12d96031f97c3">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">MicrobeDB.jp Documentation</a></h1>
+        
+        
+          <img src="https://docs.json2ld.mapper.tokyo/JSON2LD_Mapper_Logo_Short.png" alt="Logo" />
+        
+
+        <p>How to use MicrobeDB.jp</p>
+
+        
+        <p class="view"><a href="https://github.com/MicrobeDBjp/document">View the Project on GitHub <small>MicrobeDBjp/document</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h3 id="キーワード検索">キーワード検索</h3>
+
+<h4 id="系統名の検索">系統名の検索</h4>
+<p>例: Rickettsia が見つかる環境を知りたい</p>
+<ol>
+  <li>
+    <p>https://beta.microbedb.jp/
+の一番上の検索窓に Rickettsia と入力してSearch
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/RickettsiaHome.jpg" alt="RickettsiaHome" /></p>
+  </li>
+  <li>
+    <p>RickettsiaについてMicrobeDB.jpのデータを検索した結果が、Stanzaのリストとして<a href="https://beta.microbedb.jp/search?q1=Rickettsia" title="Rickettsia検索結果">表示される。</a>
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/RickettsiaStanza.jpg" alt="RickettsiaSecond" /></p>
+  </li>
+  <li>
+    <p>様々なStanzaが表示されるが、例えばRickettsiaが多い環境については、Environmental Composition of Meta16S Stanzaと、Abundant Samples Stanzaを見ると、有益な情報が得られる。両Stanzaは、公開済みのINSDC DRA/ERA/SRA中のメタ16S/メタゲノム配列データから系統組成をMeGAP2で再解析すると共に、微生物の生息環境オントロジーである<a href="https://bioportal.bioontology.org/ontologies/MEO">MEO</a>で環境をアノテーションした結果を元に作成されている。Environmental Composition of Meta16S Stanzaは指定した系統（今回はRickettsia）が平均的に多い環境をグラフ化し（値が1に近いほど群集中での平均存在量が多いが、この場合は最大値のbuilding associated（建築物関連）でも0.00139688なので、平均的な存在量は0.1%ほどと少ない）、Abundant Samples Stanzaは指定した系統が特に多いサンプルをリスト化している。
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/RickettsiaEnvDist.jpg" alt="RickettsiaDist" />
+Abundant Samples Stanzaを見ると、昆虫のメタ16Sサンプルに混じってHome microbiome、この場合は家のドアノブ等のメタ16SサンプルでRickettsiaの存在量が多いサンプルがいくつか見つかることがわかる。<br />
+<a href="https://beta.microbedb.jp/search/?q1=ERS238916&amp;q1_cat=sample&amp;q1_param_srs_id=ERS238916">ERS238916</a>等、詳細を確認したいサンプルのIDを選択すれば、そのサンプルのメタデータや系統組成等がのったページを見ることができる。
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/ERS238916.jpg" alt="ERS238916" /></p>
+  </li>
+</ol>
+
+<h4 id="遺伝子名の検索">遺伝子名の検索</h4>
+<p>例:  fliGの系統分布を知りたい</p>
+<ol>
+  <li>
+    <p>https://beta.microbedb.jp/
+の一番上の検索窓に fliG と入力してSearchすると、fliGという文字列でマッチするMBGD orthologリストのStanzaが表示される。
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/fliG.jpeg" alt="fliG" /></p>
+  </li>
+  <li>
+    <p>Ortholog group 1809を選択すると、fliGのortholog groupのリストや系統分布が表示される。fliGの系統分布は、Taxonomic Distribution of Orthologs Stanzaから視覚的に知ることができる。
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/fliGTaxa.jpeg" alt="fliGtaxa" /></p>
+  </li>
+</ol>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/MicrobeDBjp">MicrobeDBjp</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>

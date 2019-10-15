@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>ファセット検索 ### | MicrobeDB.jp Documentation</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="ファセット検索 ###" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to use MicrobeDB.jp" />
+<meta property="og:description" content="How to use MicrobeDB.jp" />
+<link rel="canonical" href="http://localhost:4000/Lecture/MicrobeDBjpver2/20180329JSB/lecture-comp_meta.html" />
+<meta property="og:url" content="http://localhost:4000/Lecture/MicrobeDBjpver2/20180329JSB/lecture-comp_meta.html" />
+<meta property="og:site_name" content="MicrobeDB.jp Documentation" />
+<script type="application/ld+json">
+{"description":"How to use MicrobeDB.jp","@type":"WebPage","url":"http://localhost:4000/Lecture/MicrobeDBjpver2/20180329JSB/lecture-comp_meta.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://docs.json2ld.mapper.tokyo/JSON2LD_Mapper_Logo_Short.png"}},"headline":"ファセット検索 ###","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=ab9358c5c2d1c658db8c765f42d12d96031f97c3">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">MicrobeDB.jp Documentation</a></h1>
+        
+        
+          <img src="https://docs.json2ld.mapper.tokyo/JSON2LD_Mapper_Logo_Short.png" alt="Logo" />
+        
+
+        <p>How to use MicrobeDB.jp</p>
+
+        
+        <p class="view"><a href="https://github.com/MicrobeDBjp/document">View the Project on GitHub <small>MicrobeDBjp/document</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h3 id="ファセット検索">ファセット検索</h3>
+
+<p>例: ヒト腸内メタ16S・メタゲノムサンプルを比較解析したい  </p>
+<ol>
+  <li>
+    <p>https://beta.microbedb.jp/
+のAnalysis -&gt; Metagenomic samplesを選択。
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/facetTop.jpg" alt="facetTop" /></p>
+  </li>
+  <li>比較解析対象のメタ16S・メタゲノムサンプルの絞り込み検索ページで、以下の3つの操作を行い、ヒト腸内メタ16S・メタゲノムサンプルのみに絞り込む。
+    <ul>
+      <li>  hasMetagenomeAnalysisでtaxonomyを選択し、系統組成が計算済みのサンプルのみにする</li>
+      <li>  hasMEO (Text)にgutと入力し、サンプリングされた環境を腸内とする</li>
+      <li>  hasHostTaxonomy (Text)にhumanと入力し、宿主の生物をヒトに限定する
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/facetSamplechoose.jpg" alt="facetSamplechoose" /></li>
+    </ul>
+  </li>
+  <li>
+    <p>メタデータ等を元に、比較解析したいメタ16S・メタゲノムサンプルのみAddボタンを押して選択する。
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/facetSamplechoose2.jpg" alt="facetSamplechoose2" /></p>
+  </li>
+  <li>車輪マークを選択し、比較解析したい系統階層をGenus-Domainの中から選択して、compareを押す。
+<img src="https://github.com/MicrobeDBjp/document/blob/master/Figures/facetComparison.jpg" alt="facetComparison" />
+各サンプルの系統組成のグラフや、系統組成を元に主座標分析(PCoA)や階層的クラスタリングをした結果、メタゲノムサンプルの場合はKEGG PathwayやKEGG Orthology組成のグラフ等が表示される。</li>
+</ol>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/MicrobeDBjp">MicrobeDBjp</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
