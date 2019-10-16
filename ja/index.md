@@ -1,8 +1,8 @@
 # About MicrobeDB.jp
 
-* [クイックスタート](/ja/quick-start)
-* [データ](/ja/data)
-* [ユースケース](/ja/use-case)
+* [クイックスタート](/document/ja/quick-start)
+* [データ](/document/ja/data)
+* [ユースケース](/document/ja/use-case)
 
 ## Motivation
 新型シーケンサーの普及により、微生物のゲノム・メタゲノムデータは公共の塩基配列データベース（DB）中に爆発的な勢いで蓄積されています。それらを独自の手法で整理したDBとしては、ゲノムDBとしては例えばPATRICやMicroScope、Ensembl Bacteria等、メタゲノムDBとしてはMG-RAST、EBI-Metagenomics、IMG/M等、どちらも多数の優れたDBが既に存在します。しかしながら、多様な微生物について、ゲノムとメタゲノムデータを統合して整理したDBは、メタデータに着目して整理したJGI GOLD等以外は、ほとんど存在しません。MicrobeDB.jpプロジェクトは、Semantic Web技術を用いて、微生物のゲノムとメタゲノムデータ、及びオーソログや菌株等の両データと深く関連したデータを統合した微生物の統合DBを構築し、Webサイト上で実装された多様な解析・視覚化手法を用いてそれらのデータから、様々なバックグラウントを持つ研究者が知識発見を容易に行えるようにすることを目的としています。
