@@ -1,0 +1,2757 @@
+openapi: 3.0.0
+info:
+  title: TogoStanza on MicrobeDB.jp
+  description: TogoStanza specifications on MicrobeDB.jp
+  version: 1.0.0
+paths:
+  /biosample_environmental_metadata_info:
+    get:
+      tags:
+        - BioSample
+      description: This stanza describes environmental information of the specified
+        BioSample.
+      operationId: biosample_environmental_metadata_info
+      parameters:
+        - name: biosample_id
+          in: query
+          description: NCBI BioSample identifier
+          required: true
+          schema:
+            type: string
+            default: SAMN02232026
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /biosample_metadata_info:
+    get:
+      tags:
+        - BioSample
+      description: This stanza describes basic information of the specified BioSample.
+      operationId: biosample_metadata_info
+      parameters:
+        - name: biosample_id
+          in: query
+          description: NCBI BioSample identifier
+          required: true
+          schema:
+            type: string
+            default: SAMN01041170
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /disease_attributes:
+    get:
+      tags:
+        - Disease
+      description: This stanza describes basic information of the specified pathogenic
+        disease based on PDO.
+      operationId: disease_attributes
+      parameters:
+        - name: pdo_id
+          in: query
+          description: PDO identifier
+          required: true
+          schema:
+            type: string
+            default: PDO_000193
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /disease_biosample_list:
+    get:
+      tags:
+        - Disease
+      description: This stanza lists BioSample ID of microbiome sequencing samples which
+        are annotated to the specified pathogenetic disease.
+      operationId: disease_biosample_list
+      parameters:
+        - name: pdo_id
+          in: query
+          description: PDO identifier
+          required: true
+          schema:
+            type: string
+            default: PDO_000193
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /disease_gene_list:
+    get:
+      tags:
+        - Disease
+      description: This stanza lists related genes of the specified pathogenetic disease.
+      operationId: disease_gene_list
+      parameters:
+        - name: pdo_id
+          in: query
+          description: PDO identifier
+          required: true
+          schema:
+            type: string
+            default: PDO_000193
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /disease_lineage_info:
+    get:
+      tags:
+        - Disease
+      description: This stanza represents PDO ID's hierarchical relationship information in
+        the ontology OWL file.
+      operationId: disease_lineage_info
+      parameters:
+        - name: pdo_id
+          in: query
+          description: PDO identifier
+          required: true
+          schema:
+            type: string
+            default: PDO_000193
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /disease_strain_list:
+    get:
+      tags:
+        - Disease
+      description: This stanza lists related strains of the specified pathogenetic disease,
+        and their isolation sources, pathogenecity.
+      operationId: disease_strain_list
+      parameters:
+        - name: pdo_id
+          in: query
+          description: PDO identifier
+          required: true
+          schema:
+            type: string
+            default: PDO_000193
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /disease_symptom_list:
+    get:
+      tags:
+        - Disease
+      description: This stanza lists related symptom information of the specified
+        pathogenetic disease based on PDO and CSSO relationship.
+      operationId: disease_symptom_list
+      parameters:
+        - name: pdo_id
+          in: query
+          description: PDO identifier
+          required: true
+          schema:
+            type: string
+            default: PDO_000220
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /disease_taxonomy_list:
+    get:
+      tags:
+        - Disease
+      description: This stanza lists related taxa of the specified pathogenetic disease.
+      operationId: disease_taxonomy_list
+      parameters:
+        - name: pdo_id
+          in: query
+          description: PDO identifier
+          required: true
+          schema:
+            type: string
+            default: PDO_000193
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_attributes:
+    get:
+      tags:
+        - Environment
+      description: This stanza describes MEO ID related information (MEO ID, Title (name of
+        environment), Synonyms, and Comment (descriptions of the MEO ID)).
+      operationId: environment_attributes
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_biosample_list:
+    get:
+      tags:
+        - Environment
+      description: This stanza lists BioSample IDs of genomes which strains were obtained
+        from the specified environment.
+      operationId: environment_biosample_list
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_biosample_taxonomy_composition:
+    get:
+      tags:
+        - Environment
+      description: "[Deprecated] Displaying taxonomic composition from biosample metadata"
+      operationId: environment_biosample_taxonomy_composition
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_environmental_ortholog:
+    get:
+      tags:
+        - Environment
+      description: "[Deprecated]"
+      operationId: environment_environmental_ortholog
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_function:
+    get:
+      tags:
+        - Environment
+      description: This stanza represents a graph of top 100 average functional composition
+        (KO (KEGG Orthology), KEGG Pathway, MGFO (MBGD Microbial Gene Function
+        Ontology seeAlso:http://mbgd.genome.ad.jp/htbin/function_category.pl))
+        of metagenomic sequencing samples obtained from SRA, which were
+        annotated to the MEO ID. Functional composition were analyzed by MeGAP.
+        Average abundances of each functional category were calculated by sum of
+        abundance of the functional category among all samples divided by total
+        number of samples, which annotated to the MEO ID. Numbers of hit were
+        normalized by length of CDS and number of assigned CDSs. Graph patterns
+        can be choose from Bar chart, Treemap, and data for Functree. Data for
+        Functree is a text data that can be used to the Functree web application
+        (http://bioviz.tokyo/functree/) input.
+      operationId: environment_function
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO ID
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+        - name: ortholog_type
+          in: query
+          description: Ortholog type(ko, pathway or mgfo). default value is pathway
+          required: false
+          schema:
+            type: string
+            default: pathway
+        - name: chart
+          in: query
+          description: Visualization type(bar, treemap, table, functree). default value is
+            bar
+          required: false
+          schema:
+            type: string
+            default: bar
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_function_table:
+    get:
+      tags:
+        - Environment
+      description: This stanza represents average functional composition (KO (KEGG
+        Orthology), KEGG Pathway, MGFO (MBGD Microbial Gene Function Ontology
+        seeAlso:http://mbgd.genome.ad.jp/htbin/function_category.pl), MBGD
+        Ortholog) of metagenomic sequencing samples obtained from SRA, which
+        were annotated to the MEO ID. Functional composition were analyzed by
+        MeGAP.  Average abundances of each functional category were calculated
+        by sum of abundance of the functional category among all samples divided
+        by total number of samples, which annotated to the MEO ID. Numbers of
+        hit were normalized by length of CDS and number of assigned CDSs.
+      operationId: environment_function_table
+      parameters:
+        - name: meo_id
+          in: query
+          description: Environment ID
+          required: true
+          schema:
+            type: string
+            default: MEO_0000004
+        - name: ortholog_type
+          in: query
+          description: ko, pathway or mbgd. default value is pathway
+          required: false
+          schema:
+            type: string
+            default: ko
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_gold_list:
+    get:
+      tags:
+        - Environment
+      description: "[Deprecated] Displaying strain genome list sampled from input
+        environment"
+      operationId: environment_gold_list
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_gold_table:
+    get:
+      tags:
+        - Environment
+      description: "[Deprecated] This stanza shows microbes genome list that was sequenced
+        and mapped to ontology(MEO). Input a MEO ID ."
+      operationId: environment_gold_table
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_linage_info:
+    get:
+      tags:
+        - Environment
+      description: This stanza represents MEO ID's hierarchical relationship information in
+        the ontology OWL file.
+      operationId: environment_linage_info
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_sample_amount_stackcharts:
+    get:
+      tags:
+        - Environment
+      description: This stanza summarizes accumulation of microbiome samples which sampled
+        from an environment in the public sequence database (INSDC DRA/ERA/SRA).
+        The environments of samples are categorized by MEO. The samples assigned
+        to multiple MEO are multiply-counted in these MEO.
+      operationId: environment_sample_amount_stackcharts
+      parameters:
+        - name: mode
+          in: query
+          description: sum or each
+          required: false
+          schema:
+            type: string
+            default: sum
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: false
+          schema:
+            type: string
+            default: MEO_0000029
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_selectable_list:
+    get:
+      tags:
+        - Other
+      description: ""
+      operationId: environment_selectable_list
+      parameters:
+        - name: referer
+          in: query
+          description: link uri of MicrobeDB
+          required: false
+          schema:
+            type: string
+            default: https://microbedb.jp
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_strain_list:
+    get:
+      tags:
+        - Environment
+      description: This stanza lists JCM or NBRC strain IDs which strains were isolated
+        from the specified environment.
+      operationId: environment_strain_list
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_taxonomy_composition_of_meta16s:
+    get:
+      tags:
+        - Environment
+      description: This stanza represents average taxonomic composition (Genus, Family,
+        Order, Class, Phylum, Domain) of 16S rRNA gene amplicon sequencing
+        samples obtained from SRA, which were annotated the MEO ID. Taxonomic
+        compositions were analyzed by MeGAP. Ribosomal Database Project's taxa
+        hierarchy were used. Since Family, Order, and Class are sometimes not
+        defined in some taxa in RDP, interpretations of these taxonomic
+        composition data should be noted. Average abundances of each taxon were
+        calculated by sum of abundance of the taxon among all samples divided by
+        total number of samples, which annotated to the MEO ID. Gray colored
+        category in each pie chart indicates other assigned taxa.
+      operationId: environment_taxonomy_composition_of_meta16s
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_taxonomy_composition_of_metagenome:
+    get:
+      tags:
+        - Environment
+      description: This stanza represents average taxonomic composition (Genus, Family,
+        Order, Class, Phylum, Domain) of metagenomic sequencing samples obtained
+        from SRA, which were annotated the MEO ID. Taxonomic composition were
+        analyzed by MeGAP. Ribosomal Database Project's taxa hierarchy were
+        used. Since Family, Order, and Class are sometimes not defined in some
+        taxa in RDP, interpretations of these taxonomic composition data should
+        be noted. Average abundances of each taxon were calculated by sum of
+        abundance of the taxon among all samples divided by total number of
+        samples, which annotated to the MEO ID. Gray colored category in each
+        pie chart indicates other assigned taxa.
+      operationId: environment_taxonomy_composition_of_metagenome
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_to_brother_function_comparison_stackbar:
+    get:
+      tags:
+        - Environment
+      description: "This stanza represents a graph of average functional composition (KEGG
+        Pathway or MGFO) of samples which annotated to the specified MEO ID or
+        hierarchically sister MEO IDs. "
+      operationId: environment_to_brother_function_comparison_stackbar
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+        - name: ortholog_type
+          in: query
+          description: ko, pathway or mbgd. default value is pathway
+          required: false
+          schema:
+            type: string
+            default: pathway
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environment_to_brother_taxonomy_comparison_stackbar:
+    get:
+      tags:
+        - Environment
+      description: "This stanza represents a graph of average taxonomic composition
+        (Domain, Phylum, Class, Order, Family, Genus) of samples which annotated
+        to the specified MEO ID or hierarchically sister MEO IDs. "
+      operationId: environment_to_brother_taxonomy_comparison_stackbar
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+        - name: type
+          in: query
+          description: domain, phylum, class, order, family or genus
+          required: false
+          schema:
+            type: string
+            default: phylum
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environments_function_comparison_stackbar:
+    get:
+      tags:
+        - Multi Environment
+      description: This stanza shows stackbar of function composition of input MEO IDs
+      operationId: environments_function_comparison_stackbar
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifiers
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029,MEO_0000030,MEO_0000024
+        - name: ortholog_type
+          in: query
+          description: ko, pathway or mbgd
+          required: false
+          schema:
+            type: string
+            default: pathway
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /environments_taxonomy_comparison_stackbar:
+    get:
+      tags:
+        - Multi Environment
+      description: This stanza shows stackbar of microbial composition of input MEO IDs
+      operationId: environments_taxonomy_comparison_stackbar
+      parameters:
+        - name: meo_id
+          in: query
+          description: "Input multi MEO ID by comma separated style "
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029,MEO_0000030,MEO_0000024
+        - name: type
+          in: query
+          description: Select one taxonomy rank (domain, phylum, class, order, family,
+            genus)
+          required: true
+          schema:
+            type: string
+            default: phylum
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /gene_annotation_list:
+    get:
+      tags:
+        - Gene
+      description: This stanza lists genes which matched to the user searched keyword in
+        their annotation.
+      operationId: gene_annotation_list
+      parameters:
+        - name: gene_name
+          in: query
+          description: Gene name
+          required: true
+          schema:
+            type: string
+            default: psbA
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /gene_list_by_text:
+    get:
+      tags:
+        - Search
+      description: "This stanza lists genes of RefSeq genomes which annotation were matched
+        to the user searched keyword. "
+      operationId: gene_list_by_text
+      parameters:
+        - name: text
+          in: query
+          description: Search word
+          required: true
+          schema:
+            type: string
+            default: psbA
+        - name: text_type
+          in: query
+          description: Searched object type
+          required: false
+          schema:
+            type: string
+            default: gene
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /gene_ortholog_list:
+    get:
+      tags:
+        - Gene
+      description: This stanza lists MBGD ortholog cluster members of the specified cluster
+        ID.
+      operationId: gene_ortholog_list
+      parameters:
+        - name: gene_name
+          in: query
+          description: Gene name
+          required: true
+          schema:
+            type: string
+            default: psbA
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /genome_information_high_quality:
+    get:
+      tags:
+        - Taxonomy
+      description: This stanza lists high quality genomes from the specified taxon. The
+        categorization of genomes to high quality or low quality was obtained
+        from NCBI RefSeq. The category "high quality" indicates reference
+        genomes or representative genomes of the taxon in NCBI RefSeq. If
+        species name is specified, the summarized information of representative
+        genome will be listed.
+      operationId: genome_information_high_quality
+      parameters:
+        - name: tax_id
+          in: query
+          description: NCBI taxonomy ID
+          required: true
+          schema:
+            type: string
+            default: "562"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /genome_information_low_quality:
+    get:
+      tags:
+        - Taxonomy
+      description: This stanza lists low quality genomes from the specified taxon. The
+        categorization of genomes to high quality or low quality was obtained
+        from NCBI RefSeq. The category "low quality" indicates genomes which are
+        not categorized in reference genomes or representative genomes of the
+        taxon in NCBI RefSeq. If species name is specified, the summarized
+        information of representative genome will be listed.
+      operationId: genome_information_low_quality
+      parameters:
+        - name: tax_id
+          in: query
+          description: NCBI taxonomy ID
+          required: true
+          schema:
+            type: string
+            default: "562"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /gold_taxonomy_compositon:
+    get:
+      tags:
+        - Environment
+      description: "[Deprecated] Displaying taxonomic composition from GOLD database
+        annotation analysis"
+      operationId: gold_taxonomy_compositon
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000004
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /gtps_definition_info:
+    get:
+      tags:
+        - GTPS
+      description: "[Deprecated] Displaying gtps definition"
+      operationId: gtps_definition_info
+      parameters:
+        - name: gtps_id
+          in: query
+          description: GTPS identifier
+          required: true
+          schema:
+            type: string
+            default: Plav_DS1:ST2899
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /gtps_environment_info:
+    get:
+      tags:
+        - GTPS
+      description: "[Deprecated] Displaying input gtps annotated environment from GOLD
+        database"
+      operationId: gtps_environment_info
+      parameters:
+        - name: gtps_id
+          in: query
+          description: GTPS identifier
+          required: true
+          schema:
+            type: string
+            default: Plav_DS1:ST2899
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /gtps_feature_info:
+    get:
+      tags:
+        - GTPS
+      description: "[Deprecated] Displaying feature information of input gtps"
+      operationId: gtps_feature_info
+      parameters:
+        - name: gtps_id
+          in: query
+          description: GTPS identifier
+          required: true
+          schema:
+            type: string
+            default: Plav_DS1:ST2899
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /gtps_genome_info:
+    get:
+      tags:
+        - GTPS
+      description: "[Deprecated] Displaying genome information of input gtps"
+      operationId: gtps_genome_info
+      parameters:
+        - name: gtps_id
+          in: query
+          description: GTPS identifier
+          required: true
+          schema:
+            type: string
+            default: Plav_DS1:ST2899
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /gtps_link_list:
+    get:
+      tags:
+        - GTPS
+      description: "[Deprecated] Displaying gtps associated resources link"
+      operationId: gtps_link_list
+      parameters:
+        - name: gtps_id
+          in: query
+          description: GTPS identifier
+          required: true
+          schema:
+            type: string
+            default: Plav_DS1:ST2899
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /gtps_ortholog_list:
+    get:
+      tags:
+        - GTPS
+      description: "[Deprecated] Displaying same MBGD ortholog cluster gene list of input
+        gtps"
+      operationId: gtps_ortholog_list
+      parameters:
+        - name: gtps_id
+          in: query
+          description: GTPS identifier
+          required: true
+          schema:
+            type: string
+            default: Plav_DS1:ST2899
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /gtps_taxonomy_tree:
+    get:
+      tags:
+        - GTPS
+      description: "[Deprecated] Displaying gtps taxonomy information"
+      operationId: gtps_taxonomy_tree
+      parameters:
+        - name: gtps_id
+          in: query
+          description: GTPS identifier
+          required: true
+          schema:
+            type: string
+            default: Plav_DS1:ST2899
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /kegg_attribute:
+    get:
+      tags:
+        - Kegg
+      description: This stanza describes basic information of specified KEGG pathway.
+      operationId: kegg_attribute
+      parameters:
+        - name: kegg_id
+          in: query
+          description: Kegg KO identifier
+          required: true
+          schema:
+            type: string
+            default: K00010
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /latitude_to_longitude_sample_map:
+    get:
+      tags:
+        - Statistics
+      description: This stanza shows map and near saples against pin.
+      operationId: latitude_to_longitude_sample_map
+      parameters:
+        - name: latitude_query
+          in: query
+          description: -90~90
+          required: false
+          schema:
+            type: string
+            default: "41.50857729743935"
+        - name: longitude_query
+          in: query
+          description: -180~180
+          required: false
+          schema:
+            type: string
+            default: "-108.45603125"
+        - name: distance_query
+          in: query
+          description: Input searching radius, unit is km
+          required: false
+          schema:
+            type: string
+            default: "3000"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /meo_ontology_viewer:
+    get:
+      tags:
+        - Environment
+      description: This stanza represents the hierarchical structure of MEO.
+      operationId: meo_ontology_viewer
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: false
+          schema:
+            type: string
+            default: MEO_0000029
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /meta16s_sample_list:
+    get:
+      tags:
+        - Environment
+      description: "This stanza represents 16S rRNA gene amplicon sequencing samples
+        obtained from SRA, which were annotated the MEO ID. 
+ID: SRA sample
+        ID (DRS/ERS/SRS ID). 
+Title: sample title in SRA.
+Environment:
+        annotated all MEO ID."
+      operationId: meta16s_sample_list
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000029
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /metadata_correlation_analysis_wrapper:
+    get:
+      tags:
+        - Metadata
+      description: "[Deprecated] select parameter, and call correlation stanzas. "
+      operationId: metadata_correlation_analysis_wrapper
+      parameters:
+        - name: msv_term
+          in: query
+          description: Type of metadata . You can input this by form.
+          required: false
+          schema:
+            type: string
+            default: pH
+        - name: type
+          in: query
+          description: KO, pathway, domain, phylum, class, order, family or genus. You can
+            input this from form .
+          required: false
+          schema:
+            type: string
+            default: phylum
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /metadata_function_correlation_analysis_scatterplot:
+    get:
+      tags:
+        - Metadata
+      description: This stanza provides interface for correlation analyses between
+        numerical metadata values of samples and abundance of each function in
+        metagenome sequencing samples
+      operationId: metadata_function_correlation_analysis_scatterplot
+      parameters:
+        - name: ortholog_id
+          in: query
+          description: ID of KO, Pathway, MBGD ortholog, MBGD MGFO
+          required: true
+          schema:
+            type: string
+            default: ko00051
+        - name: ortholog_type
+          in: query
+          description: ko, pathway, mbgd, mgfo
+          required: false
+          schema:
+            type: string
+            default: pathway
+        - name: dataset
+          in: query
+          description: Dataset name of MBGD ortholog
+          required: false
+          schema:
+            type: string
+            default: tax2157
+        - name: msv_term
+          in: query
+          description: please use a numeric msv property(e.g. temperature, pH, age ).
+            Default value is 'pH'
+          required: false
+          schema:
+            type: string
+            default: pH
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /metadata_function_correlation_analysis_table:
+    get:
+      tags:
+        - Metadata
+      description: This stanza provides interface for correlation analyses between PH
+        values of samples and abundance of each function in microbiome
+        sequencing samples. Users can choose functional criteria among KEGG
+        Pathway, KEGG Orthology, and MGFO (MBGD Microbial Gene Function
+        Ontology).
+      operationId: metadata_function_correlation_analysis_table
+      parameters:
+        - name: msv_term
+          in: query
+          description: please use numeric msv property(e.g. envTemperature, pH, hostAge )
+          required: true
+          schema:
+            type: string
+            default: envTemperature
+        - name: type
+          in: query
+          description: You can use ko, payhway, mbgd, mfgo .
+          required: true
+          schema:
+            type: string
+            default: pathway
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /metadata_selectable_list:
+    get:
+      tags:
+        - Other
+      description: Display the msv ontology tree for link to correlation analysis page
+      operationId: metadata_selectable_list
+      parameters:
+        - name: ""
+          in: query
+          description: ""
+          required: true
+          schema:
+            type: string
+            default: ""
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /metadata_taxonomy_correlation_analysis_scatterplot:
+    get:
+      tags:
+        - Metadata
+      description: This stanza provides interface for correlation analyses between
+        numerical metadata values of samples and abundance of each taxon in
+        microbiome sequencing samples
+      operationId: metadata_taxonomy_correlation_analysis_scatterplot
+      parameters:
+        - name: tax_id
+          in: query
+          description: input identifiers.org URI
+          required: true
+          schema:
+            type: string
+            default: "2"
+        - name: msv_term
+          in: query
+          description: "please use a numeric msv property(default value: pH)"
+          required: false
+          schema:
+            type: string
+            default: pH
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /metadata_taxonomy_correlation_analysis_table:
+    get:
+      tags:
+        - Metadata
+      description: This stanza provides interface for correlation analyses between PH
+        values of samples and abundance of each taxon in microbiome sequencing
+        samples
+      operationId: metadata_taxonomy_correlation_analysis_table
+      parameters:
+        - name: msv_term
+          in: query
+          description: please use numeric msv property(e.g. envTemperature, pH, hostAge )
+          required: true
+          schema:
+            type: string
+            default: hostAge
+        - name: type
+          in: query
+          description: you can use domain, phylum, class, order, family, genus .
+          required: true
+          schema:
+            type: string
+            default: family
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /metagenome_sample_list:
+    get:
+      tags:
+        - Environment
+      description: "This stanza represents metagenome sequencing samples obtained from SRA,
+        which were annotated the MEO ID. 
+ID: SRA sample ID (DRS/ERS/SRS
+        ID). 
+Title: sample title in SRA.
+Environment: annotated all MEO
+        ID."
+      operationId: metagenome_sample_list
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier
+          required: true
+          schema:
+            type: string
+            default: MEO_0000004
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /numeric_metadata_histogram:
+    get:
+      tags:
+        - Statistics
+      description: ""
+      operationId: numeric_metadata_histogram
+      parameters:
+        - name: msv_id
+          in: query
+          description: MSV property URI
+          required: false
+          schema:
+            type: string
+            default: msv:pH
+        - name: srs_id
+          in: query
+          description: Sample ID
+          required: false
+          schema:
+            type: string
+            default: DRS000009
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /ortholog_attributes_info:
+    get:
+      tags:
+        - Ortholog
+      description: "[Deprecated] Table for ortholog attribution information"
+      operationId: ortholog_attributes_info
+      parameters:
+        - name: cluster_id
+          in: query
+          description: MBGD ortholog cluster identifier
+          required: true
+          schema:
+            type: string
+            default: "3283"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /ortholog_attributes_info2013:
+    get:
+      tags:
+        - Ortholog
+      description: "[Deprecated] Table for ortholog attribution information"
+      operationId: ortholog_attributes_info_2013
+      parameters:
+        - name: cluster_id
+          in: query
+          description: MBGD ortholog cluster identifier
+          required: true
+          schema:
+            type: string
+            default: "3283"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /ortholog_environment_list:
+    get:
+      tags:
+        - Ortholog
+      description: "This stanza represents an environmental distribution of the specified
+        MBGD ortholog cluster. "
+      operationId: ortholog_environment_list
+      parameters:
+        - name: cluster_id
+          in: query
+          description: MBGD ortholog cluster identifier
+          required: true
+          schema:
+            type: string
+            default: "6865"
+        - name: dataset
+          in: query
+          description: MBGD ortholog cluster dataset (default / taxNNN)
+          required: true
+          schema:
+            type: string
+            default: tax2759
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /ortholog_environment_profile:
+    get:
+      tags:
+        - Ortholog
+      description: "[Deprecated] Chart of amount of environment that has input ortholog."
+      operationId: ortholog_environment_profile
+      parameters:
+        - name: cluster_id
+          in: query
+          description: MBGD ortholog cluster identifier
+          required: true
+          schema:
+            type: string
+            default: "3283"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /ortholog_group_members_in_environments:
+    get:
+      tags:
+        - Ortholog
+      description: "This stanza represents habitats of genome-sequenced strains which have
+        the specified MBGD ortholog cluster. "
+      operationId: ortholog_group_members_in_environments
+      parameters:
+        - name: cluster_id
+          in: query
+          description: MBGD ortholog cluster identifier
+          required: true
+          schema:
+            type: string
+            default: "6865"
+        - name: dataset
+          in: query
+          description: MBGD ortholog cluster dataset (default / taxNNN)
+          required: true
+          schema:
+            type: string
+            default: tax2759
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /ortholog_included_taxon:
+    get:
+      tags:
+        - Ortholog
+      description: "[Deprecated]"
+      operationId: ortholog_included_taxon
+      parameters:
+        - name: cluster_id
+          in: query
+          description: MBGD ortholog cluster identifier
+          required: true
+          schema:
+            type: string
+            default: "3283"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /pathogen_information:
+    get:
+      tags:
+        - Taxonomy
+      description: This stanza lists related taxa of the specified pathogenetic disease.
+        This relationship of taxa and pathogenetic diseases were obtained from
+        several scientific papers.
+      operationId: pathogen_information
+      parameters:
+        - name: tax_id
+          in: query
+          description: NCBI taxonomy identifier
+          required: true
+          schema:
+            type: string
+            default: "1763"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /phenotype_attributes:
+    get:
+      tags:
+        - Phenotype
+      description: This stanza describes the definition of the specified phenotype in MPO.
+      operationId: phenotype_attributes
+      parameters:
+        - name: mpo_id
+          in: query
+          description: MPO identifier
+          required: true
+          schema:
+            type: string
+            default: MPO_01037
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /phenotype_information:
+    get:
+      tags:
+        - Taxonomy
+      description: This stanza summarizes phenotypes of a specified taxon. Phenotype data
+        were obtained from JGI GOLD database.
+      operationId: phenotype_information
+      parameters:
+        - name: tax_id
+          in: query
+          description: NCBI taxonomy identifier
+          required: true
+          schema:
+            type: string
+            default: "386585"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /phenotype_lineage_info:
+    get:
+      tags:
+        - Phenotype
+      description: This stanza represents the hierarchical relationship of specified
+        phenotype.
+      operationId: phenotype_lineage_info
+      parameters:
+        - name: mpo_id
+          in: query
+          description: MDO identifier
+          required: true
+          schema:
+            type: string
+            default: MPO_01001
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /phenotype_taxonomy_list:
+    get:
+      tags:
+        - Phenotype
+      description: This stanza lists taxa which exhibit the specified phenotype.
+      operationId: phenotype_taxonomy_list
+      parameters:
+        - name: mpo_id
+          in: query
+          description: MPO identifier
+          required: true
+          schema:
+            type: string
+            default: MPO_03001
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /refseq_definition_info:
+    get:
+      tags:
+        - Refseq
+      description: This stanza shows the name of sequence entry of genome.
+      operationId: refseq_definition_info
+      parameters:
+        - name: seq_version
+          in: query
+          description: Refseq sequence version identifier
+          required: false
+          schema:
+            type: string
+            default: NC_003869.1
+        - name: locus_tag
+          in: query
+          description: Locus tag
+          required: false
+          schema:
+            type: string
+            default: ECNA114_3194
+        - name: protein_id
+          in: query
+          description: Protein identifier
+          required: false
+          schema:
+            type: string
+            default: YP_459189.1
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /refseq_feature_info:
+    get:
+      tags:
+        - Refseq
+      description: This stanza shows information of a specified CDS.
+      operationId: refseq_feature_info
+      parameters:
+        - name: seq_version
+          in: query
+          description: Refseq sequence version identifier
+          required: false
+          schema:
+            type: string
+            default: NC_007722.1
+        - name: locus_tag
+          in: query
+          description: Locus tag
+          required: false
+          schema:
+            type: string
+            default: EL2594_RS11320
+        - name: protein_id
+          in: query
+          description: Protein identifier
+          required: false
+          schema:
+            type: string
+            default: WP_011415215.1
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /refseq_genome_info:
+    get:
+      tags:
+        - Refseq
+      description: This stanza describes basic genome information of the strain whose
+        genome was sequenced.
+      operationId: refseq_genome_info
+      parameters:
+        - name: seq_version
+          in: query
+          description: Refseq sequence version identifier
+          required: true
+          schema:
+            type: string
+            default: NC_007722.1
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /refseq_seq_info:
+    get:
+      tags:
+        - Other
+      description: This stanza describes the strain which was sequenced their genome.
+      operationId: refseq_seq_info
+      parameters:
+        - name: seq_version
+          in: query
+          description: sequence no with version
+          required: true
+          schema:
+            type: string
+            default: NC_000913.3
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_comparison_wrapper:
+    get:
+      tags:
+        - Other
+      description: "[Deprecated] Form stanza for using comparison stanza"
+      operationId: sample_comparison_wrapper
+      parameters:
+        - name: srs_id
+          in: query
+          description: NCBI SRA Sample ID
+          required: false
+          schema:
+            type: string
+            default: DRS000009
+        - name: type
+          in: query
+          description: Annotation type of metagenome analysis (domain, family, class,
+            order, family, genus, KO, pathway)
+          required: false
+          schema:
+            type: string
+            default: pathway
+        - name: graph_type
+          in: query
+          description: Graph type you want to see
+          required: false
+          schema:
+            type: string
+            default: heatmap
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_cross_reference:
+    get:
+      tags:
+        - Metagenome
+      description: This stanza lists related link information of the microbiome sequencing
+        sample.
+      operationId: sample_cross_reference
+      parameters:
+        - name: srs_id
+          in: query
+          description: NCBI SRA Sample identifier
+          required: true
+          schema:
+            type: string
+            default: ERS001066
+        - name: referer
+          in: query
+          description: link uri of MicrobeDB
+          required: false
+          schema:
+            type: string
+            default: https://microbedb.jp
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_definition_info:
+    get:
+      tags:
+        - Metagenome
+      description: Displaying sample ID
+      operationId: sample_definition_info
+      parameters:
+        - name: srs_id
+          in: query
+          description: NCBI SRA Sample identifier
+          required: true
+          schema:
+            type: string
+            default: DRS000009
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_environmental_metadata_info:
+    get:
+      tags:
+        - Metagenome
+      description: This stanza summarizes single INSDC DRS/ERS/SRS sample description,
+        especially an environment aspect.
+      operationId: sample_environmental_metadata_info
+      parameters:
+        - name: srs_id
+          in: query
+          description: NCBI SRA Sample identifier
+          required: true
+          schema:
+            type: string
+            default: ERS424342
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_function:
+    get:
+      tags:
+        - Metagenome
+      description: "This stanza represents abundant functions in a metagenomic sequencing
+        sample. Three kinds of functional categories are used (i.e. KEGG
+        Orthology, KEGG Pathway, and MGFO (MBGD Microbial Gene Function
+        Ontology)). Four kinds of data representation strategies can be chosen.
+        "
+      operationId: sample_function
+      parameters:
+        - name: srs_id
+          in: query
+          description: SRS ID
+          required: true
+          schema:
+            type: string
+            default: DRS000009
+        - name: ortholog_type
+          in: query
+          description: Ortholog type(ko, pathway or mbgd). default value is pathway
+          required: false
+          schema:
+            type: string
+            default: pathway
+        - name: chart
+          in: query
+          description: Visualization type(bar, treemap, table, functree). default value is
+            bar
+          required: false
+          schema:
+            type: string
+            default: bar
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_function_table:
+    get:
+      tags:
+        - Metagenome
+      description: This stanza lists functional compositions of a metagenomic sequencing
+        sample. Four kinds of functional categories are used (i.e. KEGG
+        Orthology, KEGG Pathway, MBGD ortholog cluster, and MBGD functional
+        category).
+      operationId: sample_function_table
+      parameters:
+        - name: srs_id
+          in: query
+          description: ""
+          required: true
+          schema:
+            type: string
+            default: DRS000009
+        - name: ortholog_type
+          in: query
+          description: ko, pathway or mbgd. default value is pathway
+          required: false
+          schema:
+            type: string
+            default: pathway
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_metadata_info:
+    get:
+      tags:
+        - Metagenome
+      description: This stanza summarizes single INSDC DRS/ERS/SRS microbiome sequencing
+        sample description.
+      operationId: sample_metadata_info
+      parameters:
+        - name: srs_id
+          in: query
+          description: NCBI SRA Sample identifier
+          required: true
+          schema:
+            type: string
+            default: ERS067605
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_selectable_list:
+    get:
+      tags:
+        - Other
+      description: ""
+      operationId: sample_selectable_list
+      parameters:
+        - name: ""
+          in: query
+          description: ""
+          required: true
+          schema:
+            type: string
+            default: ""
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_spot_map:
+    get:
+      tags:
+        - Metagenome
+      description: Display map of sampled place. This stanza is using Google map API
+      operationId: sample_spot_map
+      parameters:
+        - name: srs_id
+          in: query
+          description: Input Sample ID
+          required: true
+          schema:
+            type: string
+            default: ERS067606
+        - name: mode
+          in: query
+          description: srs_id or srp_id, meo_id or near
+          required: false
+          schema:
+            type: string
+            default: srs_id
+        - name: overlay_size
+          in: query
+          description: msv property for overlay parameter
+          required: false
+          schema:
+            type: string
+            default: pH
+        - name: overlay_color
+          in: query
+          description: msv property for overlay parameter
+          required: false
+          schema:
+            type: string
+            default: temperature
+        - name: distance
+          in: query
+          description: Limit distance for searching sample in near mode
+          required: false
+          schema:
+            type: string
+            default: "300"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_taxonomy_composition16s:
+    get:
+      tags:
+        - Metagenome
+      description: This stanza represents taxonomic composition of a microbiome sequencing
+        sample. The taxonomic composition of each taxonomic rank is summarized
+        by a pie chart.
+      operationId: sample_taxonomy_composition16s
+      parameters:
+        - name: srs_id
+          in: query
+          description: NCBI SRA Sample identifier
+          required: true
+          schema:
+            type: string
+            default: SRS152459
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_taxonomy_composition_metagenome:
+    get:
+      tags:
+        - Metagenome
+      description: "[Deprecated] Pie chart of taxonomic composition from Metagenome
+        analysis (It is delivered by Meta 16S rRNA sequence)"
+      operationId: sample_taxonomy_composition_Metagenome
+      parameters:
+        - name: sample_id
+          in: query
+          description: NCBI SRA Sample identifier
+          required: true
+          schema:
+            type: string
+            default: SRS150404
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_taxonomy_dashboard:
+    get:
+      tags:
+        - Statistics
+      description: Searching stanza by multiple metadata for metagenome/meta 16S taxonomy
+        analysis.
+      operationId: sample_taxonomy_dashboard
+      parameters:
+        - name: meo_id
+          in: query
+          description: MEO identifier. If this value is empty, All samples mapping to MEO
+            are used.
+          required: false
+          schema:
+            type: string
+            default: MEO_0000004
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_taxonomy_envtree:
+    get:
+      tags:
+        - Metagenome
+      description: "[Deprecated] Visualization tool by MEO and MicrobeDB.jp"
+      operationId: sample_taxonomy_envtree
+      parameters:
+        - name: srs_id
+          in: query
+          description: srs_id
+          required: true
+          schema:
+            type: string
+            default: ERS074453
+        - name: type
+          in: query
+          description: type
+          required: false
+          schema:
+            type: string
+            default: genus
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_taxonomy_similarity_search:
+    get:
+      tags:
+        - Metagenome
+      description: This stanza is used to search similar sample by using relative
+        abundance. First, this stanza searches candidate samples to fucus on
+        most enriched taxon. The number of focusing taxonomy is specified by
+        enrich_threshold. And threshold of each taxonomy similarity is specified
+        by hit_threshold. All fucused taxonomy is must be in range of
+        -hit_threshold < (input sample relative abundance - candidate relative
+        abundance) / input sample relative abundance < hit_threshold. Finally
+        the similarity between input sample and candidate samples which matches
+        requirement above are calculated.
+      operationId: sample_taxonomy_similarity_search
+      parameters:
+        - name: srs_id
+          in: query
+          description: NCBI SRA Sample identifier
+          required: true
+          schema:
+            type: string
+            default: SRS404727
+        - name: enrich_threshold
+          in: query
+          description: Target spicies number for searching
+          required: true
+          schema:
+            type: string
+            default: "3"
+        - name: hit_threshold
+          in: query
+          description: tolerate noize for searching sample
+          required: true
+          schema:
+            type: string
+            default: "0.8"
+        - name: type
+          in: query
+          description: Method for comparison samples (peason, bray, jaccard)
+          required: true
+          schema:
+            type: string
+            default: bray
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_to_environment_function_comparison_stackbar:
+    get:
+      tags:
+        - Metagenome
+      description: This stanza shows specified metagenome sequencing sample's functional
+        composition and average functional composition of the same MEO-assigned
+        metagenome sequencing samples. Functional categories can be choosen from
+        KEGG pastway and MGFO (MBGD Microbial Gene Function Ontology).
+      operationId: sample_to_environment_function_comparison_stackbar
+      parameters:
+        - name: srs_id
+          in: query
+          description: Input Sample ID
+          required: true
+          schema:
+            type: string
+            default: DRS000009
+        - name: ortholog_type
+          in: query
+          description: ko, pathway, mbgd. default value is pathway
+          required: false
+          schema:
+            type: string
+            default: pathway
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_to_environment_taxonomy_comparison_stackbar:
+    get:
+      tags:
+        - Metagenome
+      description: This stanza shows specified microbiome sequencing sample's taxonomic
+        composition and average taxonomic composition of the same MEO-assigned
+        microbiome sequencing samples. Taxonomic rank can be chosen from genus,
+        family, order, class, phylum, and domain.
+      operationId: sample_to_environment_taxonomy_comparison_stackbar
+      parameters:
+        - name: srs_id
+          in: query
+          description: Input Sample ID
+          required: true
+          schema:
+            type: string
+            default: SRS152466
+        - name: type
+          in: query
+          description: Input taxonomy rank (domain, phylum, class, order, family, genus)
+          required: false
+          schema:
+            type: string
+            default: phylum
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_to_project_function_comparison_stackbar:
+    get:
+      tags:
+        - Metagenome
+      description: This stanza shows specified metagenome sequencing sample's functional
+        composition and  functional compositions of metagenome sequencing
+        samples belong to the same INSDC BioProject or DRP/ERP/SRP. Functional
+        categories can be chosen from KEGG pathway and MGFO (MBGD Microbial Gene
+        Function Ontology).
+      operationId: sample_to_project_function_comparison_stackbar
+      parameters:
+        - name: srs_id
+          in: query
+          description: NCBI SRA Sample identifier
+          required: true
+          schema:
+            type: string
+            default: SRS000238
+        - name: ortholog_type
+          in: query
+          description: ko, pathway, mbgd. default value is 'pathway'
+          required: false
+          schema:
+            type: string
+            default: pathway
+        - name: project_type
+          in: query
+          description: "type of project_id: bioproject or srp. default value is
+            'bioproject'"
+          required: false
+          schema:
+            type: string
+            default: bioproject
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /sample_to_project_taxonomy_comparison_stackbar:
+    get:
+      tags:
+        - Metagenome
+      description: This stanza shows specified microbiome sequencing sample's taxonomic
+        composition and  taxonomic compositions of microbiome sequencing samples
+        belong to the same INSDC BioProject or DRP/ERP/SRP. Taxonomic rank can
+        be chosen from genus, family, order, class, phylum, and domain.
+      operationId: sample_to_project_taxonomy_comparison_stackbar
+      parameters:
+        - name: srs_id
+          in: query
+          description: NCBI SRA Sample identifier
+          required: true
+          schema:
+            type: string
+            default: SRS025478
+        - name: type
+          in: query
+          description: domain or phylum or class or order or family or genus
+          required: false
+          schema:
+            type: string
+            default: phylum
+        - name: project_type
+          in: query
+          description: "type of project_id: bioproject or srp"
+          required: false
+          schema:
+            type: string
+            default: bioproject
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /samples_function_comparison_heatmap:
+    get:
+      tags:
+        - Multi Metagenome
+      description: Show heatmap of functional gene of samples
+      operationId: samples_function_comparison_heatmap
+      parameters:
+        - name: srs_id
+          in: query
+          description: NCBI SRA Sample identifier. Input multi samples by comma separated
+            style
+          required: true
+          schema:
+            type: string
+            default: SRS172852,DRS000009,SRS417034
+        - name: type
+          in: query
+          description: ko, pathway or or mbgd
+          required: true
+          schema:
+            type: string
+            default: pathway
+        - name: disp_order
+          in: query
+          description: displaying order of heatmap
+          required: true
+          schema:
+            type: string
+            default: SRS172852,DRS000009,SRS417034
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /samples_function_comparison_stackbar:
+    get:
+      tags:
+        - Multi Metagenome
+      description: Shows stackbar of functional gene of multi samples
+      operationId: samples_function_comparison_stackbar
+      parameters:
+        - name: srs_id
+          in: query
+          description: "Input multi samples by comma separated style "
+          required: true
+          schema:
+            type: string
+            default: SRS172852,DRS000009
+        - name: type
+          in: query
+          description: ko or pathway
+          required: true
+          schema:
+            type: string
+            default: pathway
+        - name: disp_order
+          in: query
+          description: Order of visualized columns
+          required: true
+          schema:
+            type: string
+            default: SRS172852,DRS000009
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /samples_metadata_comparison_table:
+    get:
+      tags:
+        - Multi Metagenome
+      description: Shows table of annotated metadata of multi samples
+      operationId: samples_metadata_comparison_table
+      parameters:
+        - name: srs_id
+          in: query
+          description: Input multi samples
+          required: true
+          schema:
+            type: string
+            default: SRS152468,SRS417034,SRS074073,ERS009775
+        - name: disp_order
+          in: query
+          description: Order of visualized columns
+          required: true
+          schema:
+            type: string
+            default: SRS152468,SRS417034,SRS074073,ERS009775
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /samples_taxonomy_comparison_base:
+    get:
+      tags:
+        - Other
+      description: This stanza work as common library for samples taxonomy comparison
+        stanzas. It's does not work alone.
+      operationId: samples_taxonomy_comparison_base
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /samples_taxonomy_comparison_heatmap:
+    get:
+      tags:
+        - Multi Metagenome
+      description: Shows heatmap of relative abundance of multi samples
+      operationId: samples_taxonomy_comparison_heatmap
+      parameters:
+        - name: srs_id
+          in: query
+          description: Input multi samples by comma separated style
+          required: true
+          schema:
+            type: string
+            default: SRS152452,SRS173062
+        - name: type
+          in: query
+          description: Input taxonomy rank (domain, phylum, order, class, family, genus)
+          required: false
+          schema:
+            type: string
+            default: phylum
+        - name: disp_order
+          in: query
+          description: Input sample ids for displaing order
+          required: false
+          schema:
+            type: string
+            default: SRS173062, SRS152452
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /samples_taxonomy_comparison_hierarchical_clustering:
+    get:
+      tags:
+        - Multi Metagenome
+      description: Make hierarchical clustering tree of multiple samples by using meta 16S
+        relative abundance
+      operationId: samples_taxonomy_comparison_hierarchical_clustering
+      parameters:
+        - name: srs_id
+          in: query
+          description: Comma separated style
+          required: true
+          schema:
+            type: string
+            default: SRS152452,SRS152459,DRS000578,SRS173064,DRS000009
+        - name: type
+          in: query
+          description: taxonomy rank (domain, phylum, class, order, family, genus)
+          required: false
+          schema:
+            type: string
+            default: phylum
+        - name: dist
+          in: query
+          description: Input distance matrix type (euclidean, maximum, manhattan, canberra,
+            binary, minkowski, and so on)
+          required: true
+          schema:
+            type: string
+            default: euclidean
+        - name: clust_method
+          in: query
+          description: Input clustering type (single, complete, average, centroid, median,
+            ward, mcquitty, and so on)
+          required: true
+          schema:
+            type: string
+            default: complete
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /samples_taxonomy_comparison_pcoa:
+    get:
+      tags:
+        - Multi Metagenome
+      description: Plot PCoA result
+      operationId: samples_taxonomy_comparison_pcoa
+      parameters:
+        - name: srs_id
+          in: query
+          description: Comma separated style. Input above 3 samples.
+          required: true
+          schema:
+            type: string
+            default: SRS152468,SRS086376,SRS417034,ERS001254
+        - name: type
+          in: query
+          description: taxonomy rank (domain, phylum, class, order, family, genus)
+          required: false
+          schema:
+            type: string
+            default: phylum
+        - name: dist
+          in: query
+          description: Distance matrix type (euclidean, maximum, manhattan, canberra,
+            binary, minkowski)
+          required: true
+          schema:
+            type: string
+            default: euclidean
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /samples_taxonomy_comparison_stackbar:
+    get:
+      tags:
+        - Multi Metagenome
+      description: Shows stackbar of relative abudance of multi samples
+      operationId: samples_taxonomy_comparison_stackbar
+      parameters:
+        - name: srs_id
+          in: query
+          description: Comma separated style
+          required: true
+          schema:
+            type: string
+            default: SRS001216,SRS005643,SRS007038
+        - name: type
+          in: query
+          description: taxonomy rank (domain, phylum, class, order, family, genus)
+          required: false
+          schema:
+            type: string
+            default: phylum
+        - name: disp_order
+          in: query
+          description: Input sample ids for displaing order
+          required: false
+          schema:
+            type: string
+            default: SRS007038,SRS001216,SRS005643
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /samples_taxonomy_diversity_index_comparison_plot:
+    get:
+      tags:
+        - Multi Metagenome
+      description: Plot diversity index of multi samples
+      operationId: samples_taxonomy_diversity_index_comparison_plot
+      parameters:
+        - name: srs_id
+          in: query
+          description: NCBI SRA Sample identifier . Comma separated style .
+          required: true
+          schema:
+            type: string
+            default: SRS152452,SRS152459,DRS000578,SRS173064,DRS000002
+        - name: type
+          in: query
+          description: taxonomy rank (domain, phylum, class, order, family, genus)
+          required: false
+          schema:
+            type: string
+            default: phylum
+        - name: index_type
+          in: query
+          description: Index type (shannon, simpson, invsimpson, pielou)
+          required: false
+          schema:
+            type: string
+            default: shannon
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /strain_definition_info:
+    get:
+      tags:
+        - Strain
+      description: This stanza shows a strain name of a specified strain ID.
+      operationId: strain_definition_info
+      parameters:
+        - name: strain_number
+          in: query
+          description: Strain Identifier of JCM, NBRC
+          required: true
+          schema:
+            type: string
+            default: JCM 1022
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /strain_metadata_info:
+    get:
+      tags:
+        - Strain
+      description: This stanza shows basic strain information of JCM or NBRC culture
+        collecton.
+      operationId: strain_metadata_info
+      parameters:
+        - name: strain_number
+          in: query
+          description: Strain Identifier of JCM, NBRC
+          required: true
+          schema:
+            type: string
+            default: JCM 1002
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /strain_other_collection_numbers:
+    get:
+      tags:
+        - Strain
+      description: This stanza lists other culture collection IDs of a specified JCM or
+        NBRC strain.
+      operationId: strain_other_collection_numbers
+      parameters:
+        - name: strain_number
+          in: query
+          description: Strain number of JCM or NBRC
+          required: true
+          schema:
+            type: string
+            default: JCM 10602
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /strain_reference_info:
+    get:
+      tags:
+        - Strain
+      description: This stanza shows reference information of a specified JCM or NBRC
+        strain.
+      operationId: strain_reference_info
+      parameters:
+        - name: strain_number
+          in: query
+          description: Strain Identifier of JCM, NBRC
+          required: true
+          schema:
+            type: string
+            default: JCM 14338
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /taxonomies_function_comparison_table:
+    get:
+      tags:
+        - Multi Taxonomy
+      description: "[Deprecated] Gene function comparison tool by table form.Data of gene
+        function is annotated by KEGG. You can choose 3 type - KO, module,
+        pathway.In KO class, number of annotated genes to each KEGG Ortholog are
+        displayed.And in module and pathway class, presence/absence state are
+        displayed .You can open KEGG entry page from line-label by click text."
+      operationId: taxonomies_function_comparison_table
+      parameters:
+        - name: tax_id
+          in: query
+          description: Input NCBI taxonomy IDs that are annotated gene function in KEGG by
+            comma separated style.
+          required: true
+          schema:
+            type: string
+            default: 519441,1001582
+        - name: type
+          in: query
+          description: KO, module, pathway
+          required: true
+          schema:
+            type: string
+            default: pathway
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /taxonomies_gene_content_comparison_table:
+    get:
+      tags:
+        - Other
+      description: ""
+      operationId: taxonomies_gene_content_comparison_table
+      parameters:
+        - name: dataset
+          in: query
+          description: Ortholog dataset
+          required: true
+          schema:
+            type: string
+            default: default
+        - name: tax_id
+          in: query
+          description: Two taxonomy IDs separated by comma
+          required: true
+          schema:
+            type: string
+            default: 543,186817
+        - name: ratio1
+          in: query
+          description: Lower bound of existence ratio in taxonomy ID 1
+          required: true
+          schema:
+            type: string
+            default: "0.8"
+        - name: ratio2
+          in: query
+          description: Upper bound of existence ratio in taxonomy ID 2
+          required: true
+          schema:
+            type: string
+            default: "0.2"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /taxonomy_abundant_sample:
+    get:
+      tags:
+        - Taxonomy
+      description: This stanza lists microbiome sequencing samples which the specified
+        taxon are relatively abundant.
+      operationId: taxonomy_abundant_sample
+      parameters:
+        - name: tax_id
+          in: query
+          description: NCBI taxonomy ID
+          required: true
+          schema:
+            type: string
+            default: "1224"
+        - name: n_limit
+          in: query
+          description: Limit number of showing sample(default 1000)
+          required: false
+          schema:
+            type: string
+            default: "1000"
+        - name: n_classified_read
+          in: query
+          description: Threshold for 16S rRNA gene analysis read amount for sample(default
+            1000)
+          required: false
+          schema:
+            type: string
+            default: "1000"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /taxonomy_body_mapping:
+    get:
+      tags:
+        - Taxonomy
+      description: This stanza visualizes a distribution of a specified taxon in human
+        body. Human microbiome sequencing analysis data were used to calculate
+        the distribution. BodyParts3D is used to visualize human entire body.
+      operationId: taxonomy_body_mapping
+      parameters:
+        - name: tax_id
+          in: query
+          description: NCBI taxonomy ID . Taxonomy hierarchy is limited above genus level
+          required: true
+          schema:
+            type: string
+            default: "561"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /taxonomy_composition_via_meta16s:
+    get:
+      tags:
+        - Taxonomy
+      description: This stanza represents an environmental distribution of a specified
+        taxon based on microbiome sequencing analyses. Because of the accuracy
+        of taxonomic inference of microbiome sequencing data, only genus or more
+        larger taxonomic categories are applicable.
+      operationId: taxonomy_composition_via_meta16s
+      parameters:
+        - name: tax_id
+          in: query
+          description: NCBI taxonomy ID
+          required: true
+          schema:
+            type: string
+            default: "561"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /taxonomy_cross_references:
+    get:
+      tags:
+        - Taxonomy
+      description: "[Deprecated] Table for associated resources links of input tax_id"
+      operationId: taxonomy_cross_references
+      parameters:
+        - name: tax_id
+          in: query
+          description: NCBI taxonomy ID
+          required: true
+          schema:
+            type: string
+            default: "386585"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /taxonomy_definition_info:
+    get:
+      tags:
+        - Taxonomy
+      description: This stanza lists names of the specified taxon (e.g., scientific name,
+        synonym)
+      operationId: taxonomy_definition_info
+      parameters:
+        - name: tax_id
+          in: query
+          description: NCBI taxonomy ID
+          required: true
+          schema:
+            type: string
+            default: "561"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /taxonomy_envtree:
+    get:
+      tags:
+        - Taxonomy
+      description: This stanza represents abundant environments of the specified taxon,
+        whose abundances were calculated from the combination of MEO annotation
+        and public microbiome sequencing analysis results. The relative
+        abundance of the taxon in environments are visualized using the
+        hierarchical structure of MEO.
+      operationId: taxonomy_envtree
+      parameters:
+        - name: tax_id
+          in: query
+          description: tax_id
+          required: true
+          schema:
+            type: string
+            default: "1224"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /taxonomy_phenotype_dashboard:
+    get:
+      tags:
+        - Statistics
+      description: You can search genome sequenced taxonomy by using this stanza . Avalable
+        parameters are followed . You can use multiple parameter . Cell shape,
+        Oxygen requirement, Temperature range, Motility, Cell arrangement,
+        Nutrient group, Salinity, Minimum growth pH, Optical growth pH, Maximum
+        growth pH, Minimum growth temperature, Optical growth temperature,
+        Maximum growth temperature . This stanza uses
+        Togostanza(http://penqe.com/togostanza/) , D3.js(http://d3js.org),
+        dc.js(http://dc-js.github.io/dc.js/) and
+        crossfilter.js(http://square.github.io/crossfilter/) on the front side
+        development, while uses data from MicrobeDB.jp(http://microbedb.jp/MDB/)
+        on the back side.
+      operationId: taxonomy_phenotype_dashboard
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /taxonomy_phylogenetics_tree:
+    get:
+      tags:
+        - Taxonomy
+      description: "[Deprecated] Make taxonomy tree"
+      operationId: taxonomy_phylogenetics_tree
+      parameters:
+        - name: tax_id
+          in: query
+          description: NCBI taxonomy ID
+          required: true
+          schema:
+            type: string
+            default: "541"
+        - name: depth
+          in: query
+          description: Depth of tree
+          required: false
+          schema:
+            type: string
+            default: "3"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /taxonomy_selectable_list:
+    get:
+      tags:
+        - Other
+      description: ""
+      operationId: taxonomy_selectable_list
+      parameters:
+        - name: ""
+          in: query
+          description: ""
+          required: true
+          schema:
+            type: string
+            default: ""
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /taxonomy_strain_list:
+    get:
+      tags:
+        - Taxonomy
+      description: This stanza lists JCM or NBRC strain IDs in a specified taxon.
+      operationId: taxonomy_strain_list
+      parameters:
+        - name: tax_id
+          in: query
+          description: NCBI taxonomy ID
+          required: true
+          schema:
+            type: string
+            default: "1351"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+  /taxonomy_taxonomy_tree:
+    get:
+      tags:
+        - Taxonomy
+      description: This stanza represents the hierarchical relationship of specified taxon.
+      operationId: taxonomy_taxonomy_tree
+      parameters:
+        - name: tax_id
+          in: query
+          description: NCBI taxonomy ID
+          required: true
+          schema:
+            type: string
+            default: "561"
+      responses:
+        "200":
+          description: Successful Operation
+        "400":
+          description: Bad Request.
+servers:
+  - url: https://beta.microbedb.jp/stanza
